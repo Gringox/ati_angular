@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<!-- define angular app -->
+<html ng-app="atiApp">
+
+<head>
+  <!-- SPELLS -->
+  <script src="vendor/js/jquery.min.js"></script>
+  <script src="vendor/js/bootstrap.min.js"></script>
+  <script src="vendor/js/angular.min.js"></script>
+  <script src="vendor/js/angular-route.js"></script>
+  <script src="vendor/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+  <script src="js/script.js"></script>
+
+  <!-- SCROLLS -->
+  <link rel="stylesheet" href="vendor/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/carousel.css">
+</head>
+
+<!-- define angular controller -->
+<body ng-controller="mainController">
+
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <p class="navbar-brand">ATI App</p>
+      </div>
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="#package"><i class="fa fa-shield"></i> Packages</a></li>
+        <li><a href="#user"><i class="fa fa-comment"></i> User</a></li>
+
+      </ul>
+    </div>
+  </nav>
+
+
+  <div id="main">
+  
+    <!-- angular templating -->
+		<!-- this is where content will be injected -->
+    <div ng-view></div>
+    
+  </div>
+  
+  <footer class="text-center">
+    <p>ATI App &copy;</p>
+    <img src="assets/images/browsers_logos.png" width="200px" height="100px">
+  </footer>
+
+</body>
+
+</html>
