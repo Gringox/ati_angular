@@ -9,39 +9,63 @@
   <script src="vendor/js/bootstrap.min.js"></script>
   <script src="vendor/js/angular.min.js"></script>
   <script src="vendor/js/angular-route.js"></script>
+  <script src="vendor/js/angular-local-storage.min.js"></script>
   <script src="vendor/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
   <script src="js/script.js"></script>
 
   <!-- SCROLLS -->
   <link rel="stylesheet" href="vendor/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="css/carousel.css">
+  <link rel="stylesheet" href="css/some.css">
 </head>
 
 <!-- define angular controller -->
 <body ng-controller="mainController">
 
-  <nav class="navbar navbar-default">
-    <div class="container">
-      <div class="navbar-header">
-        <p class="navbar-brand">ATI App</p>
-      </div>
-
-      <ul class="nav navbar-nav navbar-right">
-
-        <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
-        <li><a href="#package"><i class="fa fa-shield"></i> Packages</a></li>
-        <li><a href="#user"><i class="fa fa-comment"></i> User</a></li>
-
-      </ul>
+  <div ng-hide="userIsLogged()">
+    
+    <div class="custom container">
+      <form ng-submit="submit()">
+        <div class="form-group">
+            <label for="inputEmail">Email</label>
+            <input type="email" class="form-control" placeholder="Email" ng-model="user.email">
+        </div>
+        <div class="form-group">
+            <label for="inputPassword">Password</label>
+            <input type="password" class="form-control" placeholder="Password" ng-model="user.password">
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form>
     </div>
-  </nav>
+
+  </div>
+
+  <div ng-hide="!userIsLogged()">
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <p class="navbar-brand">ATI App</p>
+        </div>
+
+        <ul class="nav navbar-nav navbar-right">
+
+          <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+          <li><a href="#package"><i class="fa fa-shield"></i> Packages</a></li>
+          <li><a href="#user"><i class="fa fa-comment"></i> User</a></li>
+          <li><a href="#" ng-click="signOut()"><i class="fa fa-comment"></i> Sign Out</a></li>
+
+        </ul>
+      </div>
+    </nav>
 
 
-  <div id="main">
-  
-    <!-- angular templating -->
-		<!-- this is where content will be injected -->
-    <div ng-view></div>
+    <div id="main">
+    
+      <!-- angular templating -->
+  		<!-- this is where content will be injected -->
+      <div ng-view></div>
+
+    </div>
     
   </div>
   
@@ -49,6 +73,8 @@
     <p>ATI App &copy;</p>
     <img src="assets/images/browsers_logos.png" width="200px" height="100px">
   </footer>
+
+</div>
 
 </body>
 
