@@ -22,7 +22,7 @@
 <body ng-controller="mainController">
 
   <div ng-hide="userIsLogged()">
-    
+
     <div class="custom container">
       <form ng-submit="submit()">
         <div class="form-group">
@@ -50,7 +50,7 @@
         <ul class="nav navbar-nav navbar-right">
 
           <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
-          <li><a href="#package"><i class="fa fa-shield"></i> Packages</a></li>
+          <li><a href="#todos"><i class="fa fa-shield"></i> TODOs</a></li>
           <li><a href="#user"><i class="fa fa-comment"></i> User</a></li>
           <li><a href="#" ng-click="signOut()"><i class="fa fa-comment"></i> Sign Out</a></li>
 
@@ -60,15 +60,15 @@
 
 
     <div id="main">
-    
+
       <!-- angular templating -->
   		<!-- this is where content will be injected -->
       <div ng-view></div>
 
     </div>
-    
+
   </div>
-  
+
   <footer class="text-center">
     <p>ATI App &copy;</p>
     <img src="assets/images/browsers_logos.png" width="200px" height="100px">

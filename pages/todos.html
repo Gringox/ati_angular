@@ -1,0 +1,13 @@
+<div class="jumbotron text-center">
+	<h1>TODOs Page</h1>
+
+  <!-- We set the message value in the controller -->
+	<p>{{ message }}</p>
+
+  <!-- We show the todos for a user -->
+  <ul class="list-group">
+    <li class="list-group-item" ng-repeat="todo in todos">
+      {{todo.description}}
+    </li>
+  </ul>
+</div>
